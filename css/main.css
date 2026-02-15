@@ -1,0 +1,112 @@
+:root {
+    --shownCell:  lightgray;
+    --hiddenCell:  grey;
+}
+
+body{
+    text-align: center;
+    background-color: #478bdf7d;
+}
+
+.game-board .hidden {
+    background-color: var(--hiddenCell);
+    color: transparent;
+}
+
+.game-board {
+    background-color: var(--shownCell);
+    margin: 10px auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    border-collapse: collapse;
+    table-layout: fixed;
+  border-collapse: collapse;
+  width: max-content;
+    
+}
+
+.game-board td{
+    border: 0.5px solid white;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+     
+}
+
+.game-over-win{
+    background-color: rgba(18, 233, 3, 0.249);
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+}
+
+.controls { 
+    position: relative; 
+    z-index: 20; 
+}
+
+.game-over-loss{
+    background-color: rgba(186, 41, 41, 0.249);
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+}
+
+.difficulties td{
+    color: #00f2b5;
+    padding: 10px 20px;
+    background-color: #0c6de0;
+    display: inline-grid;
+    border: 1.5px solid black;
+    margin: 15px;
+    border: 1.5px solid white;
+    border-radius: 9px;
+    overflow: hidden; 
+}
+
+.difficulties{
+    margin: 10px auto;
+}
+
+.restart ,.difficulties{
+cursor: pointer;
+}
+
+.timer, .flags, .restart{
+   display: inline-block;
+   border: 2px solid blue;
+   border-radius: 9px;
+}
+
+.lives, .timer, .flags, .restart{
+   margin: 10px;
+   padding: 10px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blink-mine-cell{
+    background-color: var(--shownCell);
+    animation: blink 0.5s infinite;
+}
+
+.disabled-cell {
+    pointer-events: none; 
+    cursor: not-allowed;  
+}
+
+.hints{
+   display: inline-block;
+}
+
+.hints img {
+    height: 50px;
+}
